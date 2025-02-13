@@ -34,8 +34,9 @@ This is a simple Weather Forecast Application that allows users to view the curr
 3. Select a previously searched city from the dropdown to quickly view its weather data.
 
 ## Screenshots
-(Include screenshots here if available)
-
+  ![ss](<ss and screen recording/sss1.png>)
+## Screen recording 
+<video controls src="ss and screen recording/weather.mp4" title="screen recording"></video>
 ## API Key Setup
 This project uses the OpenWeather API. You can replace the placeholder `API_KEY` in `script.js` with your own OpenWeather API key.
 
