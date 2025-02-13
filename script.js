@@ -47,14 +47,25 @@ function displayWeather(data) {
  
 
 
+  // weatherInfo.innerHTML = `
+  //   <h2 class="text-2xl font-bold" style="font-family: cursive;">Weather in ${data.name}</h2>
+  //   <img src="${weatherIcon}" alt="${data.weather[0].description}" class="w-16 h-16">
+  //   <p>Temperature: ${data.main.temp}°C</p>
+  //   <p>Weather: ${data.weather[0].description}</p>
+  //   <p>Humidity: ${data.main.humidity}%</p>
+  //   <p>Wind Speed: ${data.wind.speed} m/s</p>
+  // `;
+
+
   weatherInfo.innerHTML = `
-    <h2 class="text-2xl font-bold" style="font-family: cursive;">Weather in ${data.name}</h2>
-    <img src="${weatherIcon}" alt="${data.weather[0].description}" class="w-16 h-16">
-    <p>Temperature: ${data.main.temp}°C</p>
-    <p>Weather: ${data.weather[0].description}</p>
-    <p>Humidity: ${data.main.humidity}%</p>
-    <p>Wind Speed: ${data.wind.speed} m/s</p>
-  `;
+  <h2 class="text-2xl font-bold" style="font-family: cursive;">Weather in ${data.name}</h2>
+  <img src="${weatherIcon}" alt="${data.weather[0].description}" class="w-16 h-16">
+  <p style="font-family: cursive;">Temperature: ${data.main.temp}°C</p>
+  <p style="font-family: cursive;">Weather: ${data.weather[0].description}</p>
+  <p style="font-family: cursive;">Humidity: ${data.main.humidity}%</p>
+  <p style="font-family: cursive;">Wind Speed: ${data.wind.speed} m/s</p>
+`;
+
 }
 
 
@@ -110,14 +121,24 @@ function displayForecast(data) {
     forecastCard.className = 'border p-4 rounded mb-2';
     forecastCard.style.backgroundColor = '#d7d1fa'; // Set background color
 
+    // forecastCard.innerHTML = `
+    //   <p class="font-bold">${date}</p>
+    //   <img src="${weatherIcon}" alt="${forecast.weather[0].description}" class="w-16 h-16">
+    //   <p>Temp: ${forecast.main.temp}°C</p>
+    //   <p>Weather: ${forecast.weather[0].description}</p>
+    //   <p>Humidity: ${forecast.main.humidity}%</p>
+    //   <p>Wind Speed: ${forecast.wind.speed} m/s</p>
+    // `;
+
     forecastCard.innerHTML = `
-      <p class="font-bold">${date}</p>
-      <img src="${weatherIcon}" alt="${forecast.weather[0].description}" class="w-16 h-16">
-      <p>Temp: ${forecast.main.temp}°C</p>
-      <p>Weather: ${forecast.weather[0].description}</p>
-      <p>Humidity: ${forecast.main.humidity}%</p>
-      <p>Wind Speed: ${forecast.wind.speed} m/s</p>
-    `;
+  <p class="font-bold" style="font-family: cursive;">${date}</p>
+  <img src="${weatherIcon}" alt="${forecast.weather[0].description}" class="w-16 h-16">
+  <p style="font-family: cursive;">Temp: ${forecast.main.temp}°C</p>
+  <p style="font-family: cursive;">Weather: ${forecast.weather[0].description}</p>
+  <p style="font-family: cursive;">Humidity: ${forecast.main.humidity}%</p>
+  <p style="font-family: cursive;">Wind Speed: ${forecast.wind.speed} m/s</p>
+`;
+
 
     forecastCardsContainer.appendChild(forecastCard);
   });
@@ -221,7 +242,9 @@ function saveRecentCity(city) {
 function updateRecentCitiesDropdown(cities) {
   const dropdown = document.getElementById('recent-cities');
   dropdown.classList.remove('hidden');
-  dropdown.innerHTML = '<option value="" disabled selected>Select a recent city</option>';
+  // dropdown.innerHTML = '<option value="" disabled selected>Select a recent city</option>';
+  dropdown.innerHTML = '<option value="" disabled selected style="font-family: cursive;">Select a recent city</option>';
+
   cities.forEach(city => {
     const option = document.createElement('option');
     option.value = city;
