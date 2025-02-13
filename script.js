@@ -48,7 +48,7 @@ function displayWeather(data) {
 
 
   weatherInfo.innerHTML = `
-    <h2 class="text-xl font-bold">Weather in ${data.name}</h2>
+    <h2 class="text-2xl font-bold" style="font-family: cursive;">Weather in ${data.name}</h2>
     <img src="${weatherIcon}" alt="${data.weather[0].description}" class="w-16 h-16">
     <p>Temperature: ${data.main.temp}°C</p>
     <p>Weather: ${data.weather[0].description}</p>
@@ -91,7 +91,9 @@ function displayForecast(data) {
 function displayForecast(data) {
   const forecastDiv = document.getElementById('forecast-info');
   forecastDiv.classList.remove('hidden');
-  forecastDiv.innerHTML = '<h2 class="text-2xl font-bold">5-Day Forecast</h2>';
+  //forecastDiv.innerHTML = '<h2 class="text-2xl font-bold">5-Day Forecast</h2>';
+  forecastDiv.innerHTML = '<h2 class="text-2xl font-bold" style="font-family: cursive;">5-Day Forecast</h2>';
+
 
   const filteredForecast = data.list.filter(item => item.dt_txt.includes("12:00:00"));
 
