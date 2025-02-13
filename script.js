@@ -87,17 +87,18 @@ function displayForecast(data) {
   });
 }
 
-
+//  5-day forecast 
 function displayForecast(data) {
   const forecastDiv = document.getElementById('forecast-info');
   forecastDiv.classList.remove('hidden');
-  forecastDiv.innerHTML = '<h2 class="text-xl font-bold">5-Day Forecast</h2>';
+  forecastDiv.innerHTML = '<h2 class="text-2xl font-bold">5-Day Forecast</h2>';
 
   const filteredForecast = data.list.filter(item => item.dt_txt.includes("12:00:00"));
 
   const forecastCardsContainer = document.createElement('div');
   forecastCardsContainer.id = 'forecast-cards';
   forecastCardsContainer.className = 'flex flex-wrap';
+  
 
   filteredForecast.forEach(forecast => {
     const date = new Date(forecast.dt_txt).toLocaleDateString();
@@ -105,10 +106,11 @@ function displayForecast(data) {
 
     const forecastCard = document.createElement('div');
     forecastCard.className = 'border p-4 rounded mb-2';
+    forecastCard.style.backgroundColor = '#d7d1fa'; // Set background color
 
     forecastCard.innerHTML = `
       <p class="font-bold">${date}</p>
-      <img src="${weatherIcon}" alt="${forecast.weather[0].description}" class="w-12 h-12">
+      <img src="${weatherIcon}" alt="${forecast.weather[0].description}" class="w-16 h-16">
       <p>Temp: ${forecast.main.temp}°C</p>
       <p>Weather: ${forecast.weather[0].description}</p>
       <p>Humidity: ${forecast.main.humidity}%</p>
