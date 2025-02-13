@@ -1,0 +1,26 @@
+.bg-purple-custom {
+  background-color: #8C52FF;
+}
+
+.custom-container {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 8px; /* Optional: Adds rounded corners */
+  padding: 16px; /* Optional: Adds internal padding */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow */
+}
+
+  
+
+#forecast-cards > div {
+  margin-right: 25px; /* Adds space between each card */
+}
+
+#forecast-cards > div:last-child {
+  margin-right: 0; /* Ensures no extra margin on the last card */
+}
+
+#forecast-cards {
+  margin-top: 16px; /* Adjust the value as needed */
+  /* background-color: rgb(247, 247, 246); */
+}
+
