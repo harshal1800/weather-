@@ -18,6 +18,11 @@ function fetchWeather(city) {
     .then(data => {
       displayWeather(data);
       saveRecentCity(city);
+
+      // Change font and size of weather info
+    // const weatherInfoElement = document.getElementById('weather-info');
+    // weatherInfoElement.style.fontFamily = 'Arial, sans-serif';
+    // weatherInfoElement.style.fontSize = '30px';
     })
     .catch(error => {
       showErrorMessage(error.message);
